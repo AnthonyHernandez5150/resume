@@ -1,0 +1,38 @@
+[
+  {
+    "title": "AI Notes App",
+    "description": "A smart note-taking application with AI-powered summarization and organization features. Users can login, view their note history, and get automatic summaries of their content.",
+    "technologies": ["Flask", "DeepSeek API", "SQLite", "JavaScript", "HTML/CSS"],
+    "links": {
+      "demo": "https://anthonyhernandez5150.github.io/ai-notes-app",
+      "code": "https://github.com/AnthonyHernandez5150/ai-notes-app"
+    }
+  },
+  {
+    "title": "QR Analytics Dashboard",
+    "description": "A comprehensive analytics platform for tracking QR code scans with real-time data visualization and PDF report generation. Used by small businesses to track marketing campaign effectiveness.",
+    "technologies": ["React", "Node.js", "Firebase", "Chart.js", "PDFKit"],
+    "links": {
+      "demo": null,
+      "code": "https://github.com/AnthonyHernandez5150/qr-analytics"
+    }
+  },
+  {
+    "title": "Cover Letter Portfolio",
+    "description": "A dynamic portfolio that generates tailored cover letters based on job descriptions. Includes responsive design, dark mode, and PDF export functionality.",
+    "technologies": ["JavaScript", "HTML5", "CSS3", "PDF.js", "GitHub Pages"],
+    "links": {
+      "demo": "https://anthonyhernandez5150.github.io/cover-letter-generator",
+      "code": "https://github.com/AnthonyHernandez5150/cover-letter-generator"
+    }
+  },
+  {
+    "title": "Travel Expense Tracker",
+    "description": "Mobile app for tracking travel expenses with currency conversion and receipt scanning. Built for digital nomads and frequent travelers.",
+    "technologies": ["React Native", "Firebase", "OCR API", "ExchangeRate API"],
+    "links": {
+      "demo": null,
+      "code": "https://github.com/AnthonyHernandez5150/travel-expense-tracker"
+    }
+  }
+]
