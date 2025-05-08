@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthony Hernandez | Full-Stack Developer</title>
+  <meta name="description" content="Professional resume and portfolio of Anthony Hernandez, Full-Stack Developer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+    <span class="dark-mode-icon">🌙</span>
+    <span class="light-mode-icon">☀️</span>
+  </button>
+
+  <div class="container">
+    <header class="profile-header">
+      <div class="profile-image">
+        <!-- Placeholder for profile image -->
+        <div class="image-placeholder">AJH</div>
+      </div>
+      <div class="profile-info">
+        <h1>Anthony James Hernandez</h1>
+        <p class="subtitle">Full-Stack Developer | Problem Solver | Always Learning</p>
+        <div class="contact-links">
+          <a href="mailto:dev.anthonyproton.me@proton.me" aria-label="Email">
+            <i class="fas fa-envelope"></i> Email
+          </a>
+          <a href="https://github.com/AnthonyHernandez5150" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/anthony-hernandez-70a95435b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section id="about" class="card">
+      <h2><i class="fas fa-user"></i> About Me</h2>
+      <div class="about-content" id="about-content">
+        <!-- Dynamic content will be loaded here -->
+      </div>
+    </section>
+
+    <section id="skills" class="card">
+      <h2><i class="fas fa-code"></i> Technical Skills</h2>
+      <div class="skills-container" id="skills-container">
+        <!-- Skills will be loaded dynamically -->
+      </div>
+    </section>
+
+    <section id="projects" class="card">
+      <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+      <div class="projects-grid" id="projects-container">
+        <!-- Projects will be loaded dynamically -->
+      </div>
+    </section>
+
+    <section id="experience" class="card">
+      <h2><i class="fas fa-briefcase"></i> Experience</h2>
+      <div class="timeline" id="experience-container">
+        <!-- Experience will be loaded dynamically -->
+      </div>
+    </section>
+
+    <section id="education" class="card">
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+      <div class="education-list" id="education-container">
+        <!-- Education will be loaded dynamically -->
+      </div>
+    </section>
+
+    <section id="github" class="card">
+      <h2><i class="fab fa-github"></i> GitHub Activity</h2>
+      <div class="github-stats">
+        <div class="stat-box">
+          <div class="stat-value" id="repo-count">0</div>
+          <div class="stat-label">Public Repos</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="commit-count">0</div>
+          <div class="stat-label">Recent Commits</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="star-count">0</div>
+          <div class="stat-label">Stars Earned</div>
+        </div>
+      </div>
+      <div id="recent-activity" class="recent-activity">
+        <h3>Recent Activity</h3>
+        <div class="activity-feed" id="activity-feed">
+          <!-- GitHub activity will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <p>Currently open to remote opportunities</p>
+        <div class="social-links">
+          <a href="https://github.com/AnthonyHernandez5150" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/anthony-hernandez-70a95435b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:dev.anthonyproton.me@proton.me" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <p id="last-updated"></p>
+        <button id="print-btn" class="print-btn">
+          <i class="fas fa-file-pdf"></i> Save as PDF
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
