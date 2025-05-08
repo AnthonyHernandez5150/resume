@@ -238,9 +238,23 @@ h2 i {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.project-tech {
+  margin: 10px 0;
+}
+
+.tech-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin: 3px;
+  font-size: 0.8rem;
+}
+
 .project-links {
   display: flex;
   gap: 10px;
+  margin-top: 15px;
 }
 
 .project-links a {
@@ -337,66 +351,11 @@ h2 i {
 .education-item p {
   color: var(--text-light);
   font-size: 0.9rem;
-}
-
-.github-stats {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.stat-box {
-  text-align: center;
-  padding: 20px;
-  min-width: 120px;
-  background-color: var(--secondary-color);
-  color: white;
-  border-radius: var(--border-radius);
-}
-
-.stat-value {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.activity-feed {
-  max-height: 300px;
-  overflow-y: auto;
-  padding-right: 10px;
-}
-
-.activity-item {
-  padding: 15px;
-  margin-bottom: 15px;
-  background-color: var(--secondary-color);
-  border-radius: var(--border-radius);
-  color: white;
-}
-
-.activity-item-header {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 10px;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
 }
 
-.activity-item-title {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.activity-item-desc {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
+.education-item ul {
+  padding-left: 20px;
 }
 
 footer {
@@ -506,14 +465,8 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .github-stats {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .stat-box {
-    width: 100%;
-    max-width: 200px;
+  .education-list {
+    grid-template-columns: 1fr;
   }
 }
 
