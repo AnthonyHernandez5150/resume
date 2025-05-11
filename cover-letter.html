@@ -6,6 +6,7 @@
   <title>Anthony Hernandez | FullStack Developer Application</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
   <style>
     :root {
       --primary: #2c3e50;
@@ -52,14 +53,6 @@
       margin-top: 0;
     }
 
-    h3 {
-      color: var(--primary);
-      font-size: 1.4rem;
-      margin-top: 40px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--border);
-    }
-
     .badges {
       display: flex;
       justify-content: center;
@@ -77,6 +70,7 @@
       border-radius: 50px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
+      text-decoration: none;
     }
 
     .badge:hover {
@@ -88,116 +82,41 @@
       color: var(--accent);
     }
 
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-      position: relative;
-    }
-
-    li:before {
-      content: "▹";
-      position: absolute;
-      left: -20px;
-      color: var(--accent);
-    }
-
-    .project {
+    .cover-letter {
       background-color: var(--card);
-      padding: 20px;
-      border-radius: 8px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      margin: 50px auto;
+      max-width: 800px;
+      line-height: 1.8;
+    }
+
+    .cover-letter h2 {
+      color: var(--primary);
+      font-size: 1.75rem;
       margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    .project-title {
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-    }
-
-    .project-title a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .project-title a:hover {
-      color: var(--accent);
-    }
-
-    .project-tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0;
-    }
-
-    .tech-tag {
-      background-color: #e1f0fa;
-      color: var(--primary);
-      padding: 3px 10px;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      font-family: 'Roboto Mono', monospace;
-    }
-
-    .cta-box {
-      background-color: var(--accent);
-      color: white;
-      padding: 25px;
-      border-radius: 8px;
-      margin: 40px 0;
-      text-align: center;
-    }
-
-    .cta-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .signature {
-      margin-top: 50px;
-      text-align: center;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 20px 0;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .contact-link:hover {
-      color: var(--accent);
-    }
-
-    button.download-btn {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
+    .cover-letter p {
+      color: var(--text);
+      margin-bottom: 20px;
       font-size: 1rem;
-      background-color: var(--primary);
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta button {
+      background-color: var(--accent);
       color: white;
       border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
       border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button.download-btn:hover {
-      background-color: var(--accent);
     }
   </style>
 </head>
@@ -206,26 +125,6 @@
     <header>
       <h1>FullStack Developer Application</h1>
       <h2>Anthony James Hernandez</h2>
-      <button class="download-btn" onclick="downloadPDF()">📥 Download as PDF</button>
-      <section class="cover-letter">
-  <h2>Why I'm a Perfect Fit for FullStack</h2>
-  <p>
-    FullStack’s focus on transparent culture, elite engineering, and meaningful work resonates deeply with me.
-    With 5+ years in full-stack development, I specialize in building scalable apps using React, Node.js, and modern
-    databases like PostgreSQL and MongoDB. I’ve led remote teams, delivered multilingual platforms, and solved 
-    hard problems in low-resource environments — even coding through generator power in Central America.
-  </p>
-  <p>
-    What excites me about FullStack is the blend of technical challenge and global collaboration. I bring not just code,
-    but commitment, adaptability, and drive. I'm confident that my passion for clean architecture, RESTful APIs,
-    and full-cycle project delivery will make an immediate impact on your team and clients.
-  </p>
-  <p>
-    I’d love to contribute to FullStack’s mission and would be thrilled to discuss how I can bring value to your projects.
-    Thank you for your time and consideration.
-  </p>
-</section>
-
       <div class="badges">
         <a href="https://anthonyhernandez5150.github.io/resume" class="badge" target="_blank">
           <i class="fas fa-file-alt"></i> View Resume
@@ -239,32 +138,42 @@
       </div>
     </header>
 
-    <!-- Your sections remain the same -->
-    <!-- [Cut for brevity] -->
+    <section class="cover-letter">
+      <h2>Why I'm a Great Fit for FullStack</h2>
+      <p>
+        FullStack’s reputation for transparency, innovation, and elite engineering isn’t just inspiring — it’s exactly where I want to be.
+        With 5+ years building full-stack solutions in React, Node.js, Firebase, and PostgreSQL, I’ve shipped scalable products
+        under pressure, across time zones, and sometimes off a solar panel in the jungle.
+      </p>
+      <p>
+        I don’t just write code — I solve problems, automate headaches, and keep learning even when the internet goes out.
+        Whether I’m designing intelligent dashboards, building AI-powered tools, or crafting multilingual user experiences,
+        I bring curiosity, grit, and that beautiful “what-if?” energy to every repo I touch.
+      </p>
+      <p>
+        I’m ready to contribute to FullStack’s mission and help your clients crush their goals. Let’s make things fast, flexible, and freaking awesome.
+        Thanks for checking me out.
+      </p>
+    </section>
 
-    <div class="signature">
-      <div class="contact-links">
-        <a href="mailto:dev.anthonyproton.me@proton.me" class="contact-link">
-          <i class="fas fa-envelope"></i> dev.anthonyproton.me@proton.me
-        </a>
-        <a href="tel:970-405-7250" class="contact-link">
-          <i class="fas fa-phone"></i> 970-405-7250
-        </a>
-      </div>
-      <p>Let's build something incredible together.</p>
+    <div class="cta">
+      <button onclick="downloadPDF()"><i class="fas fa-download"></i> Download as PDF</button>
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     function downloadPDF() {
-      html2pdf().set({
-        margin: 0.5,
-        filename: 'Anthony_Hernandez_FullStack_Cover.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-      }).from(document.body).save();
+      const element = document.body;
+      html2pdf()
+        .set({
+          margin: 0.5,
+          filename: 'Anthony_Hernandez_FullStack_Cover.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        })
+        .from(element)
+        .save();
     }
   </script>
 </body>
