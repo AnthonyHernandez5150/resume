@@ -1,141 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anthony Hernandez | Full-Stack Developer</title>
-  <meta name="description" content="Professional portfolio of Anthony Hernandez, Full-Stack Developer">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthony Hernandez | Tech-Savvy CSM + AI Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2a5bd7;
+      --secondary: #3a9efd;
+      --light: #f5f8ff;
+      --dark: #1a1a1a;
+      --gray: #6b7280;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 80px 30px 60px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+      font-weight: 800;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 15px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-bar {
+      background: var(--dark);
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .contact-bar a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s;
+    }
+    .contact-bar a:hover {
+      transform: translateY(-2px);
+    }
+    .section {
+      padding: 60px 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section h2 {
+      color: var(--primary);
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    .section h2::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--secondary);
+      border-radius: 3px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      border-left: 4px solid var(--secondary);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    ul { 
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    li { 
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 15px;
+    }
+    li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+    }
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .tag {
+      background: #d9e5ff;
+      color: var(--primary);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .tag:hover {
+      background: var(--secondary);
+      color: white;
+      transform: scale(1.05);
+    }
+    .card h3 {
+      margin-top: 0;
+      position: relative;
+      padding-left: 25px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .card h3::before {
+      content: "•";
+      color: var(--secondary);
+      font-size: 1.8em;
+      position: absolute;
+      left: 0;
+      top: -5px;
+    }
+    .card h3 span {
+      color: var(--gray);
+      font-weight: 600;
+      font-size: 0.9em;
+    }
+    .tech-tags {
+      font-size: 0.7em;
+      color: var(--gray);
+      font-weight: normal;
+      width: 100%;
+      margin-top: 5px;
+    }
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 30px;
+      font-size: 1.1em;
+    }
+    @media (max-width: 768px) {
+      header {
+        padding: 60px 20px 40px;
+      }
+      header h1 {
+        font-size: 2.2em;
+      }
+      .section {
+        padding: 40px 20px;
+      }
+      .contact-bar {
+        gap: 12px;
+        padding: 12px;
+      }
+      .contact-bar a {
+        font-size: 0.9em;
+      }
+    }
+    @media print {
+      body { 
+        background: white;
+        font-size: 12pt;
+      }
+      .card { 
+        box-shadow: none; 
+        border: 1px solid #eee;
+        page-break-inside: avoid;
+      }
+      .section { 
+        padding: 20px 0;
+      }
+      header { 
+        padding: 40px 0;
+        background: var(--primary) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .contact-bar {
+        display: none;
+      }
+      .tag {
+        background: #d9e5ff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
 </head>
 <body>
-  <button class="dark-mode-toggle" aria-label="Toggle dark mode">
-    <i class="fas fa-moon dark-mode-icon"></i>
-    <i class="fas fa-sun light-mode-icon"></i>
-  </button>
-
-  <div class="container">
-    <header class="profile-header">
-      <div class="profile-image">
-        <div class="image-placeholder">AJH</div>
-      </div>
-      <div class="profile-info">
-        <h1>Anthony James Hernandez</h1>
-        <p class="subtitle">Full-Stack Developer | Problem Solver | Always Learning</p>
-        <div class="contact-links">
-          <a href="mailto:dev.anthonyproton.me@proton.me" aria-label="Email">
-            <i class="fas fa-envelope"></i> Email
-          </a>
-          <a href="https://github.com/AnthonyHernandez5150" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/anthony-hernandez-70a95435b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-        </div>
-      </div>
-    </header>
-
-    <section id="about" class="card">
-      <h2><i class="fas fa-user"></i> About Me</h2>
-      <div class="about-content" id="about-content">
-        <p>I'm a passionate full-stack developer with experience building web applications from concept to deployment. My journey in tech began with a deep curiosity about how things work, which led me to teach myself programming while traveling through Central America.</p>
-        <p>What sets me apart is my ability to adapt to new technologies quickly and my problem-solving mindset. I thrive in environments where I can tackle complex challenges and create efficient, user-friendly solutions.</p>
-        <div class="fun-fact">
-          <strong>Fun fact:</strong> I once built a web app while camping in the Costa Rican jungle, powered by solar panels!
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="card">
-      <h2><i class="fas fa-code"></i> Technical Skills</h2>
-      <div class="skills-container" id="skills-container">
-        <!-- Loaded dynamically from skills-data.json -->
-      </div>
-    </section>
-
-    <section id="projects" class="card">
-      <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-      <div class="projects-grid" id="projects-container">
-        <!-- Loaded dynamically from projects-data.json -->
-      </div>
-    </section>
-
-    <section id="experience" class="card">
-      <h2><i class="fas fa-briefcase"></i> Experience</h2>
-      <div class="timeline" id="experience-container">
-        <div class="timeline-item">
-          <div class="timeline-date">2023 - Present</div>
-          <div class="timeline-title">Freelance Full-Stack Developer • Self-employed</div>
-          <div class="timeline-description">Developed web and mobile applications for clients across various industries.</div>
-          <ul class="timeline-details">
-            <li>Built custom WordPress themes and plugins for small businesses</li>
-            <li>Developed bilingual (English/Spanish) interfaces for Latin American clients</li>
-            <li>Created automation scripts to streamline client workflows</li>
-            <li>Implemented CI/CD pipelines for client projects</li>
-          </ul>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">2021 - 2023</div>
-          <div class="timeline-title">Web Development Consultant • Various Clients</div>
-          <div class="timeline-description">Provided technical solutions and consulting services to startups and small businesses.</div>
-          <ul class="timeline-details">
-            <li>Migrated legacy systems to modern web frameworks</li>
-            <li>Optimized website performance leading to 40% faster load times</li>
-            <li>Trained non-technical teams on CMS platforms</li>
-            <li>Implemented analytics and tracking for better user insights</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="card">
-      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-      <div class="education-list" id="education-container">
-        <div class="education-item">
-          <h3>Aims Community College</h3>
-          <p>Full Stack Web Development • 2020-2021</p>
-          <ul>
-            <li>Focus on JavaScript, PHP, and database design</li>
-            <li>Completed capstone project with local business</li>
-          </ul>
-        </div>
-        <div class="education-item">
-          <h3>Colt Steele's Web Developer Bootcamp</h3>
-          <p>Certificate of Completion • 2021</p>
-          <ul>
-            <li>Comprehensive full-stack curriculum</li>
-            <li>Built 10+ projects including YelpCamp clone</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-content">
-        <p>Currently open to remote opportunities</p>
-        <div class="social-links">
-          <a href="https://github.com/AnthonyHernandez5150" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/anthony-hernandez-70a95435b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="mailto:dev.anthonyproton.me@proton.me" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
-        <p id="last-updated"></p>
-        <button id="print-btn" class="print-btn">
-          <i class="fas fa-file-pdf"></i> Save as PDF
-        </button>
-      </div>
-    </footer>
+  <header>
+    <h1>Anthony James Hernandez</h1>
+    <p>AI Developer • Customer Success Expert • WordPress Engineer</p>
+  </header>
+  
+  <div class="contact-bar">
+    <a href="tel:970-405-7250"><i class="fas fa-phone"></i> 970-405-7250</a>
+    <a href="mailto:dev.anthonyproton.me@proton.me"><i class="fas fa-envelope"></i> dev.anthonyproton.me@proton.me</a>
+    <a href="https://github.com/AnthonyHernandez5150" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://linkedin.com/in/anthony-hernandez-70a95435b" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://youtube.com/@soulfuljourney-nl2zm" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
   </div>
 
-  <script src="script.js"></script>
+  <div class="section">
+    <h2>Summary</h2>
+    <div class="card">
+      <p>Multi-skilled Customer Success and Technical Specialist with a background in client support, SaaS adoption, and AI-integrated application development. Proven success supporting enterprise customers, training teams, and building full-stack solutions with a focus on usability and automation. Passionate about user advocacy, rapid learning, and empowering others through technology.</p>
+      <p>Beyond code, I've run my own YouTube channel where I break down biblical verses using AI — not religious, just human. I use that same storytelling mindset in app development, teaching, and support. I'm also a trained mechanic, have built from nothing in rural Honduras and Nicaragua, and know how to deliver solutions even with limited tools or bandwidth.</p>
+    </div>
+
+    <h2>Skills</h2>
+    <div class="card">
+      <div class="tag-container">
+        <span class="tag">Customer Success</span>
+        <span class="tag">API Integration</span>
+        <span class="tag">WordPress</span>
+        <span class="tag">Flask</span>
+        <span class="tag">React Native</span>
+        <span class="tag">OpenRouter API</span>
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Postman</span>
+        <span class="tag">CapCut Pro</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">LiveChat</span>
+        <span class="tag">Mechanical Repair</span>
+        <span class="tag">HubSpot</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Firebase</span>
+        <span class="tag">AI Image Generation</span>
+      </div>
+    </div>
+
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>YouTube Creator / AI Developer <span>2023 – Present</span></h3>
+      <span class="tech-tags">OpenRouter API • AI Summarization • Content Automation</span>
+      <ul>
+        <li>Managed a growing YouTube channel breaking down complex topics using AI, including interactive verse analysis and visuals</li>
+        <li>Created transcript-based summarizers and audience automation tools using OpenRouter API and scripting languages</li>
+        <li>Published 2-minute educational videos simplifying abstract concepts through modern storytelling</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Freelance Developer & Client Support Specialist <span>2020 – Present</span></h3>
+      <span class="tech-tags">Flask • WordPress • React Native • QR Analytics</span>
+      <ul>
+        <li>Developed full-stack AI apps with Flask, SQLite, and LLM APIs like DeepSeek/OpenRouter</li>
+        <li>Supported WordPress clients with Avada theme optimization, CRM forms, and booking flows (Calendly, Bookly)</li>
+        <li>Delivered mobile-responsive UI/UX upgrades and solved remote connectivity deployment issues</li>
+        <li>Built custom QR code tracking systems with analytics dashboards for print marketing</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Customer Service & Inventory Specialist – MRC Global <span>2012 – 2016</span></h3>
+      <span class="tech-tags">Logistics • Training • Vendor Relations</span>
+      <ul>
+        <li>Coordinated pipe, valve, and fitting logistics for global energy clients in high-pressure conditions</li>
+        <li>Trained staff on safety systems and inventory control procedures</li>
+        <li>Built strong vendor and client relationships through reliability and urgency handling</li>
+      </ul>
+    </div>
+
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Fantasy XI AI</h3>
+      <span class="tech-tags">React Native • Expo • LLM Analysis</span>
+      <ul>
+        <li>Mobile app for fantasy soccer news and predictions based on LLM analysis</li>
+        <li>Integrated multiple API sources with custom weighting algorithms</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>QuickSum</h3>
+      <span class="tech-tags">Flask • OpenRouter API • SQLite</span>
+      <ul>
+        <li>Browser-based AI-powered summarizer with login and dark mode</li>
+        <li>Processes documents, web pages, and user notes into actionable summaries</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>WordPress Site Conversions</h3>
+      <span class="tech-tags">Avada • GTMetrix • PageSpeed</span>
+      <ul>
+        <li>Rebuilt HVAC sites with GTMetrix/PageSpeed optimization scores above 90%</li>
+        <li>Implemented booking systems that reduced client no-shows by 40%</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Visa Support Web Portal (In Progress)</h3>
+      <span class="tech-tags">PDF Automation • Encryption • Multilingual</span>
+      <ul>
+        <li>Secure portal for families pursuing hardship waivers with USCIS</li>
+        <li>Features dynamic PDF generation with user data and multilingual support</li>
+      </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Colt Steele Web Developer Bootcamp</strong> – Completed June 12, 2021</li>
+        <li><strong>Ongoing Professional Development:</strong> Udemy courses in full-stack and mobile development</li>
+      </ul>
+    </div>
+
+    <h2>Additional Info</h2>
+    <div class="card">
+      <ul>
+        <li>Native English speaker</li>
+        <li>Experienced in low-resource, off-grid tech development</li>
+        <li>U.S. citizen, no sponsorship required</li>
+        <li>Currently based in Central America – open to remote or U.S.-based work</li>
+      </ul>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> Anthony James Hernandez | <a href="https://github.com/AnthonyHernandez5150" style="color:white;text-decoration:underline;">GitHub Portfolio</a></p>
+  </footer>
 </body>
 </html>
